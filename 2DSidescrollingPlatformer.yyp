@@ -34,7 +34,11 @@
   },
   "name":"2DSidescrollingPlatformer",
   "resources":[
+    {"id":{"name":"obj_floor1","path":"objects/obj_floor1/obj_floor1.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_floor1","path":"sprites/spr_floor1/spr_floor1.yy",},},
+    {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
