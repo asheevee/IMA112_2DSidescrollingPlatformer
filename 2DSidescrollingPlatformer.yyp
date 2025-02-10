@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"2DSidescrollingPlatformer",
   "resources":[
@@ -41,7 +41,10 @@
     {"id":{"name":"spr_floor1","path":"sprites/spr_floor1/spr_floor1.yy",},},
     {"id":{"name":"spr_orb_cooldown","path":"sprites/spr_orb_cooldown/spr_orb_cooldown.yy",},},
     {"id":{"name":"spr_orb_speed","path":"sprites/spr_orb_speed/spr_orb_speed.yy",},},
+    {"id":{"name":"spr_player_fall","path":"sprites/spr_player_fall/spr_player_fall.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
+    {"id":{"name":"spr_player_jump","path":"sprites/spr_player_jump/spr_player_jump.yy",},},
+    {"id":{"name":"spr_player_walk","path":"sprites/spr_player_walk/spr_player_walk.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
