@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hud_coins",
+  "%Name":"obj_label_parent",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_hud_coins",
+  "name":"obj_label_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -26,14 +25,13 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"text_data","filters":[],"listItems":[],"multiselect":false,"name":"text_data","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"test","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_hud_coins",
-    "path":"sprites/spr_hud_coins/spr_hud_coins.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
