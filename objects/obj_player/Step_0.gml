@@ -2,9 +2,9 @@
 /// @DnDVersion : 1
 /// @DnDHash : 12F426B2
 /// @DnDComment : decrement powerup timer
-/// @DnDArgument : "var" "powerup_timer"
+/// @DnDArgument : "var" "powerup_timer_speed"
 /// @DnDArgument : "op" "2"
-if(powerup_timer > 0)
+if(powerup_timer_speed > 0)
 {
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
@@ -12,24 +12,28 @@ if(powerup_timer > 0)
 	/// @DnDParent : 12F426B2
 	/// @DnDArgument : "expr" "-1"
 	/// @DnDArgument : "expr_relative" "1"
-	/// @DnDArgument : "var" "powerup_timer"
-	powerup_timer += -1;
+	/// @DnDArgument : "var" "powerup_timer_speed"
+	powerup_timer_speed += -1;
 
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 5B2447DA
 	/// @DnDParent : 12F426B2
-	/// @DnDArgument : "var" "powerup_timer"
-	if(powerup_timer == 0)
+	/// @DnDArgument : "var" "powerup_timer_speed"
+	if(powerup_timer_speed == 0)
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 57BB69C4
 		/// @DnDComment : reset walk speed
+		/// @DnDInput : 2
 		/// @DnDParent : 5B2447DA
-		/// @DnDArgument : "expr" "12"
+		/// @DnDArgument : "expr" "move_walkSpeed * 0.5"
+		/// @DnDArgument : "expr_1" "move_anim_speed * 0.5"
 		/// @DnDArgument : "var" "move_walkSpeed"
-		move_walkSpeed = 12;
+		/// @DnDArgument : "var_1" "move_anim_speed"
+		move_walkSpeed = move_walkSpeed * 0.5;
+		move_anim_speed = move_anim_speed * 0.5;
 	}
 }
 
