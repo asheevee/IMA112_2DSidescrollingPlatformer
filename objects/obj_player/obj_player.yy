@@ -49,6 +49,7 @@
     {"$GMObjectProperty":"v1","%Name":"move_anim_speed","filters":[],"listItems":[],"multiselect":false,"name":"move_anim_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"move_air_rotation_drag_timer","filters":[],"listItems":[],"multiselect":false,"name":"move_air_rotation_drag_timer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"move_face_dir","filters":[],"listItems":[],"multiselect":false,"name":"move_face_dir","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"collision_tilemap","filters":[],"listItems":[],"multiselect":false,"name":"collision_tilemap","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

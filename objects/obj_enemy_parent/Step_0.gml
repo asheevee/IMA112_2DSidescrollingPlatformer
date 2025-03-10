@@ -1,3 +1,10 @@
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 2DBC5791
+/// @DnDArgument : "expr" "layer_tilemap_get_id("Tiles_Collision")"
+/// @DnDArgument : "var" "collision_tilemap"
+collision_tilemap = layer_tilemap_get_id("Tiles_Collision");
+
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 12F426B2
@@ -60,9 +67,8 @@ move_x = move_walkSpeed;
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y" "2"
 /// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "object" "obj_floor1"
-/// @DnDSaveInfo : "object" "obj_floor1"
-var l65C1AEEC_0 = instance_place(x + 0, y + 2, [obj_floor1]);
+/// @DnDArgument : "object" "collision_tilemap"
+var l65C1AEEC_0 = instance_place(x + 0, y + 2, [collision_tilemap]);
 if ((l65C1AEEC_0 > 0))
 {
 	/// @DnDAction : YoYo Games.Common.Variable
@@ -82,9 +88,8 @@ if ((l65C1AEEC_0 > 0))
 	/// @DnDParent : 65C1AEEC
 	/// @DnDArgument : "x" "x + 25 * sign(move_x)"
 	/// @DnDArgument : "y_relative" "1"
-	/// @DnDArgument : "object" "obj_floor1"
-	/// @DnDSaveInfo : "object" "obj_floor1"
-	var l476E38F7_0 = instance_place(x + 25 * sign(move_x), y + 0, [obj_floor1]);
+	/// @DnDArgument : "object" "collision_tilemap"
+	var l476E38F7_0 = instance_place(x + 25 * sign(move_x), y + 0, [collision_tilemap]);
 	if ((l476E38F7_0 > 0))
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
@@ -102,9 +107,8 @@ if ((l65C1AEEC_0 > 0))
 	/// @DnDParent : 65C1AEEC
 	/// @DnDArgument : "x" "x + 30 * sign(move_x)"
 	/// @DnDArgument : "y" "y + 50"
-	/// @DnDArgument : "object" "obj_floor1"
-	/// @DnDSaveInfo : "object" "obj_floor1"
-	var l276572F3_0 = instance_place(x + 30 * sign(move_x), y + 50, [obj_floor1]);
+	/// @DnDArgument : "object" "collision_tilemap"
+	var l276572F3_0 = instance_place(x + 30 * sign(move_x), y + 50, [collision_tilemap]);
 	if ((l276572F3_0 > 0))
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
@@ -149,6 +153,5 @@ else
 /// @DnDArgument : "num_iterations" "8"
 /// @DnDArgument : "maxxmove" "move_walkSpeed"
 /// @DnDArgument : "maxymove" "48"
-/// @DnDArgument : "object" "obj_floor1"
-/// @DnDSaveInfo : "object" "obj_floor1"
-move_and_collide(move_x, move_y, obj_floor1,8,0,0,move_walkSpeed,48);
+/// @DnDArgument : "object" "collision_tilemap"
+move_and_collide(move_x, move_y, collision_tilemap,8,0,0,move_walkSpeed,48);
