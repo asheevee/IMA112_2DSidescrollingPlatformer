@@ -8,8 +8,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_orb_parent","path":"objects/obj_orb_parent/obj_orb_parent.yy",},"propertyId":{"name":"orb_sprite","path":"objects/obj_orb_parent/obj_orb_parent.yy",},"resource":{"name":"spr_orb_jump","path":"sprites/spr_orb_jump/spr_orb_jump.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_orb_jump",},
   ],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"powerups",
+    "path":"folders/Objects/powerups.yy",
   },
   "parentObjectId":{
     "name":"obj_orb_parent",

@@ -8,8 +8,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_label_parent","path":"objects/obj_label_parent/obj_label_parent.yy",},"propertyId":{"name":"text_data","path":"objects/obj_label_parent/obj_label_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Legend has it that long ago, there existed a world of COLOR. But on the rise of the\\nNew Moon, the nefarious DARKNESS swept over the land, robbing it of its COLOR.\\n\\nNow, the intrepid explorer BLORBO must venture into this abandoned land,\\nrecover the six HUES, confront the nefarious DARKNESS, and restore COLOR\\nto the land once and for all.",},
   ],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"labels",
+    "path":"folders/Objects/labels.yy",
   },
   "parentObjectId":{
     "name":"obj_label_parent",
