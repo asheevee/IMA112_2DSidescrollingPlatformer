@@ -3,7 +3,7 @@
 /// @DnDHash : 77294721
 /// @DnDApplyTo : {obj_orb_speed}
 /// @DnDArgument : "expr" "powerup_can_interact"
-with(obj_orb_speed) var l77294721_0 = powerup_can_interact;
+with(obj_orb_parent) var l77294721_0 = powerup_can_interact;
 if(l77294721_0)
 {
 	/// @DnDAction : YoYo Games.Common.Variable

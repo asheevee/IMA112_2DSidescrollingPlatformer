@@ -8,7 +8,7 @@ collision_tilemap = layer_tilemap_get_id("Tiles_Collision");
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 12F426B2
-/// @DnDComment : decrement powerup timer
+/// @DnDComment : decrement powerup timers
 /// @DnDArgument : "var" "powerup_timer_speed"
 /// @DnDArgument : "op" "2"
 if(powerup_timer_speed > 0){	/// @DnDAction : YoYo Games.Common.Variable
@@ -31,12 +31,40 @@ if(powerup_timer_speed > 0){	/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDComment : reset walk speed
 		/// @DnDInput : 2
 		/// @DnDParent : 5B2447DA
-		/// @DnDArgument : "expr" "move_walkSpeed * 0.5"
-		/// @DnDArgument : "expr_1" "move_anim_speed * 0.5"
+		/// @DnDArgument : "expr" "12"
+		/// @DnDArgument : "expr_1" "move_anim_speed / 1.5"
 		/// @DnDArgument : "var" "move_walkSpeed"
 		/// @DnDArgument : "var_1" "move_anim_speed"
-		move_walkSpeed = move_walkSpeed * 0.5;
-		move_anim_speed = move_anim_speed * 0.5;}}
+		move_walkSpeed = 12;
+		move_anim_speed = move_anim_speed / 1.5;}}
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 18C5CF43
+/// @DnDArgument : "var" "powerup_timer_jump"
+/// @DnDArgument : "op" "2"
+if(powerup_timer_jump > 0){	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 4459037F
+	/// @DnDParent : 18C5CF43
+	/// @DnDArgument : "expr" "-1"
+	/// @DnDArgument : "expr_relative" "1"
+	/// @DnDArgument : "var" "powerup_timer_jump"
+	powerup_timer_jump += -1;
+
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 39FEA12C
+	/// @DnDParent : 18C5CF43
+	/// @DnDArgument : "var" "powerup_timer_jump"
+	if(powerup_timer_jump == 0){	/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 1059B0FF
+		/// @DnDComment : reset jump speed
+		/// @DnDParent : 39FEA12C
+		/// @DnDArgument : "expr" "16"
+		/// @DnDArgument : "var" "move_jumpSpeed"
+		move_jumpSpeed = 16;}}
 
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1

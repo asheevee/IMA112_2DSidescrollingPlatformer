@@ -1,15 +1,15 @@
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
-/// @DnDHash : 5A0BFBE5
+/// @DnDHash : 51CCE10F
 /// @DnDApplyTo : other
 /// @DnDArgument : "var" "powerup_can_interact"
 /// @DnDArgument : "value" "true"
-with(other) var l5A0BFBE5_0 = powerup_can_interact == true;
-if(l5A0BFBE5_0){	/// @DnDAction : YoYo Games.Instances.Set_Sprite
+with(other) var l51CCE10F_0 = powerup_can_interact == true;
+if(l51CCE10F_0){	/// @DnDAction : YoYo Games.Instances.Set_Sprite
 	/// @DnDVersion : 1
-	/// @DnDHash : 4C40B2F5
+	/// @DnDHash : 0E8C9998
 	/// @DnDApplyTo : other
-	/// @DnDParent : 5A0BFBE5
+	/// @DnDParent : 51CCE10F
 	/// @DnDArgument : "spriteind" "spr_orb_cooldown"
 	/// @DnDSaveInfo : "spriteind" "spr_orb_cooldown"
 	with(other) {
@@ -19,9 +19,9 @@ if(l5A0BFBE5_0){	/// @DnDAction : YoYo Games.Instances.Set_Sprite
 
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
-	/// @DnDHash : 1CD5947E
+	/// @DnDHash : 27475856
 	/// @DnDApplyTo : other
-	/// @DnDParent : 5A0BFBE5
+	/// @DnDParent : 51CCE10F
 	/// @DnDArgument : "expr" "powerup_cooldown_init"
 	/// @DnDArgument : "var" "powerup_cooldown"
 	with(other) {
@@ -31,16 +31,12 @@ if(l5A0BFBE5_0){	/// @DnDAction : YoYo Games.Instances.Set_Sprite
 
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
-	/// @DnDHash : 21AB6160
-	/// @DnDComment : double walk speed for 10 seconds
-	/// @DnDInput : 3
-	/// @DnDParent : 5A0BFBE5
-	/// @DnDArgument : "expr" "18"
+	/// @DnDHash : 7BAAA386
+	/// @DnDInput : 2
+	/// @DnDParent : 51CCE10F
+	/// @DnDArgument : "expr" "22"
 	/// @DnDArgument : "expr_1" "600"
-	/// @DnDArgument : "expr_2" "move_anim_speed * 1.5"
-	/// @DnDArgument : "var" "move_walkSpeed"
-	/// @DnDArgument : "var_1" "powerup_timer_speed"
-	/// @DnDArgument : "var_2" "move_anim_speed"
-	move_walkSpeed = 18;
-	powerup_timer_speed = 600;
-	move_anim_speed = move_anim_speed * 1.5;}
+	/// @DnDArgument : "var" "move_jumpSpeed"
+	/// @DnDArgument : "var_1" "powerup_timer_jump"
+	move_jumpSpeed = 22;
+	powerup_timer_jump = 600;}

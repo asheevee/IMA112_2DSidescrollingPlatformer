@@ -33,7 +33,6 @@ if(powerup_cooldown > 0){	/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 7CB3C015
 		/// @DnDParent : 3E4E5D99
-		/// @DnDArgument : "spriteind" "spr_orb_speed"
-		/// @DnDSaveInfo : "spriteind" "spr_orb_speed"
-		sprite_index = spr_orb_speed;
+		/// @DnDArgument : "spriteind" "orb_sprite"
+		sprite_index = orb_sprite;
 		image_index = 0;}}

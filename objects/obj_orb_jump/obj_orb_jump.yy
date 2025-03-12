@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_orb_speed",
+  "%Name":"obj_orb_jump",
   "eventList":[],
   "managed":true,
-  "name":"obj_orb_speed",
+  "name":"obj_orb_jump",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_orb_parent","path":"objects/obj_orb_parent/obj_orb_parent.yy",},"propertyId":{"name":"orb_sprite","path":"objects/obj_orb_parent/obj_orb_parent.yy",},"resource":{"name":"spr_orb_speed","path":"sprites/spr_orb_speed/spr_orb_speed.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_orb_speed",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_orb_parent","path":"objects/obj_orb_parent/obj_orb_parent.yy",},"propertyId":{"name":"orb_sprite","path":"objects/obj_orb_parent/obj_orb_parent.yy",},"resource":{"name":"spr_orb_jump","path":"sprites/spr_orb_jump/spr_orb_jump.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_orb_jump",},
   ],
   "parent":{
     "name":"Objects",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_orb_speed",
-    "path":"sprites/spr_orb_speed/spr_orb_speed.yy",
+    "name":"spr_orb_jump",
+    "path":"sprites/spr_orb_jump/spr_orb_jump.yy",
   },
   "spriteMaskId":null,
   "visible":true,
