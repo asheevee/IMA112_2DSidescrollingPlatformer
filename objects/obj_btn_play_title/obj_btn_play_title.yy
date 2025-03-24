@@ -8,6 +8,7 @@
   "name":"obj_btn_play_title",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_btn_parent","path":"objects/obj_btn_parent/obj_btn_parent.yy",},"propertyId":{"name":"text_data","path":"objects/obj_btn_parent/obj_btn_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Play",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_btn_parent","path":"objects/obj_btn_parent/obj_btn_parent.yy",},"propertyId":{"name":"target_room","path":"objects/obj_btn_parent/obj_btn_parent.yy",},"resource":{"name":"Intro","path":"rooms/Intro/Intro.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Intro",},
   ],
   "parent":{
     "name":"buttons",
