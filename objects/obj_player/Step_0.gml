@@ -95,6 +95,37 @@ control_input_jumpInit = keyboard_check_pressed(vk_up) || keyboard_check_pressed
 /// @DnDArgument : "var" "move_x"
 move_x = (control_input_right - control_input_left) * move_walkSpeed;
 
+/// @DnDAction : YoYo Games.Tiles.Tile_Get_At_Pixel
+/// @DnDVersion : 1
+/// @DnDHash : 7EAE411F
+/// @DnDComment : Layer: the literal name of the layer of your tileset$(13_10)X/Y positions: the exact pixel to check the tile (my player sprite is 64x64 anchored at the middle, so Y 34 is 2 pixels below the bottom of the sprite)$(13_10)Target: the variable to write the tile index to$(13_10)$(13_10)If you were to change the X and Y to other points you could check for walls, ceilings, etc.$(13_10)$(13_10)(I put this up towards the top because I use this variable to check for other terrain types)
+/// @DnDArgument : "x_relative" "1"
+/// @DnDArgument : "y" "34"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "var" "collision_tile_index"
+/// @DnDArgument : "layername" ""Tiles_Collision""
+var l7EAE411F_0 = layer_tilemap_get_id("Tiles_Collision");
+collision_tile_index = undefined;
+if(l7EAE411F_0 > -1) {
+	var l7EAE411F_1 = tilemap_get_at_pixel(l7EAE411F_0, x + 0, y + 34);
+	if(l7EAE411F_1 > -1) collision_tile_index = tile_get_index(l7EAE411F_1);
+}
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 58153010
+/// @DnDComment : Tile indeces are numbered based on the tileset object$(13_10)Left to right, top to bottom, starting at 0 (for no tile)$(13_10)The death tile in my tileset is index 9 in the tileset object, it could be different in others
+/// @DnDArgument : "var" "collision_tile_index"
+/// @DnDArgument : "value" "9"
+if(collision_tile_index == 9)
+{
+	/// @DnDAction : YoYo Games.Rooms.Restart_Room
+	/// @DnDVersion : 1
+	/// @DnDHash : 1484EF3D
+	/// @DnDParent : 58153010
+	room_restart();
+}
+
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 2D699C27
@@ -176,6 +207,36 @@ if ((l42678B7C_0 > 0))
 	}
 }
 
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 30D1C326
+/// @DnDComment : every frame if not grounded, increment coyote time--$(13_10)allows the player to jump even for a few frames after falling off the edge,$(13_10)makes movement feel more fluid and forgiving
+/// @DnDArgument : "var" "move_coyoteTime"
+/// @DnDArgument : "op" "3"
+/// @DnDArgument : "value" "move_coyoteTime_max"
+if(move_coyoteTime <= move_coyoteTime_max)
+{
+	/// @DnDAction : YoYo Games.Common.If_Expression
+	/// @DnDVersion : 1
+	/// @DnDHash : 716A86A0
+	/// @DnDParent : 30D1C326
+	/// @DnDArgument : "expr" "control_input_jumpInit && move_y >= 0"
+	if(control_input_jumpInit && move_y >= 0)
+	{
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 5ADC3F99
+		/// @DnDInput : 2
+		/// @DnDParent : 716A86A0
+		/// @DnDArgument : "expr" "true"
+		/// @DnDArgument : "expr_1" "move_jumpTimer_init"
+		/// @DnDArgument : "var" "move_isJumping"
+		/// @DnDArgument : "var_1" "move_jumpTimer"
+		move_isJumping = true;
+		move_jumpTimer = move_jumpTimer_init;
+	}
+}
+
 /// @DnDAction : YoYo Games.Collisions.If_Object_At
 /// @DnDVersion : 1.1
 /// @DnDHash : 65C1AEEC
@@ -190,13 +251,15 @@ if ((l65C1AEEC_0 > 0))
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 2B3D9EF8
-	/// @DnDInput : 2
+	/// @DnDInput : 3
 	/// @DnDParent : 65C1AEEC
 	/// @DnDArgument : "expr_1" "true"
 	/// @DnDArgument : "var" "move_y"
 	/// @DnDArgument : "var_1" "move_isGrounded"
+	/// @DnDArgument : "var_2" "move_coyoteTime"
 	move_y = 0;
 	move_isGrounded = true;
+	move_coyoteTime = 0;
 
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
@@ -223,20 +286,25 @@ if ((l65C1AEEC_0 > 0))
 /// @DnDAction : YoYo Games.Common.Else
 /// @DnDVersion : 1
 /// @DnDHash : 3A250E90
-/// @DnDComment : not grounded AND jump timer is running out$(13_10)apply gravity
 else
 {
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 277B626B
+	/// @DnDInput : 2
 	/// @DnDParent : 3A250E90
 	/// @DnDArgument : "expr" "false"
+	/// @DnDArgument : "expr_1" "1"
+	/// @DnDArgument : "expr_relative_1" "1"
 	/// @DnDArgument : "var" "move_isGrounded"
+	/// @DnDArgument : "var_1" "move_coyoteTime"
 	move_isGrounded = false;
+	move_coyoteTime += 1;
 
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 3D7A6460
+	/// @DnDComment : not grounded AND jump timer is running out$(13_10)apply gravity
 	/// @DnDParent : 3A250E90
 	/// @DnDArgument : "expr" "move_jumpTimer <= move_jumpTimer_init - move_jumpTimer_goStraightFrame"
 	if(move_jumpTimer <= move_jumpTimer_init - move_jumpTimer_goStraightFrame)
@@ -259,23 +327,20 @@ else
 /// @DnDArgument : "value" "true"
 if(move_isGrounded == true)
 {
-	/// @DnDAction : YoYo Games.Collisions.If_Object_At
-	/// @DnDVersion : 1.1
-	/// @DnDHash : 2AFEB91B
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 27DEE7D7
 	/// @DnDComment : check for powerup terrain (jump)
 	/// @DnDParent : 5351691C
-	/// @DnDArgument : "x_relative" "1"
-	/// @DnDArgument : "y" "2"
-	/// @DnDArgument : "y_relative" "1"
-	/// @DnDArgument : "object" "powerup_tilemap_jump"
-	var l2AFEB91B_0 = instance_place(x + 0, y + 2, [powerup_tilemap_jump]);
-	if ((l2AFEB91B_0 > 0))
+	/// @DnDArgument : "var" "collision_tile_index"
+	/// @DnDArgument : "value" "7"
+	if(collision_tile_index == 7)
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 72C93EFC
 		/// @DnDComment : set jump speed
-		/// @DnDParent : 2AFEB91B
+		/// @DnDParent : 27DEE7D7
 		/// @DnDArgument : "expr" "22"
 		/// @DnDArgument : "var" "move_jumpSpeed"
 		move_jumpSpeed = 22;
@@ -305,23 +370,20 @@ if(move_isGrounded == true)
 		}
 	}
 
-	/// @DnDAction : YoYo Games.Collisions.If_Object_At
-	/// @DnDVersion : 1.1
-	/// @DnDHash : 6236BA29
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 61AFCFC3
 	/// @DnDComment : check for powerup terrain (speed)
 	/// @DnDParent : 5351691C
-	/// @DnDArgument : "x_relative" "1"
-	/// @DnDArgument : "y" "2"
-	/// @DnDArgument : "y_relative" "1"
-	/// @DnDArgument : "object" "powerup_tilemap_speed"
-	var l6236BA29_0 = instance_place(x + 0, y + 2, [powerup_tilemap_speed]);
-	if ((l6236BA29_0 > 0))
+	/// @DnDArgument : "var" "collision_tile_index"
+	/// @DnDArgument : "value" "4"
+	if(collision_tile_index == 4)
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 68978C14
 		/// @DnDComment : set walk speed
-		/// @DnDParent : 6236BA29
+		/// @DnDParent : 61AFCFC3
 		/// @DnDArgument : "expr" "18"
 		/// @DnDArgument : "var" "move_walkSpeed"
 		move_walkSpeed = 18;

@@ -231,7 +231,7 @@ else
 /// @DnDAction : YoYo Games.Loops.Loop
 /// @DnDVersion : 1
 /// @DnDHash : 592AA920
-/// @DnDComment : deals with getting stuck in walls from janky instance scaling:$(13_10)checks all four directions, pushes the player outwards until there is no longer a collision
+/// @DnDComment : deals with getting stuck in walls from janky instance scaling:$(13_10)checks all four directions, pushes the player outwards until there is no longer a collision$(13_10)also resets vertical speed and cancels a jump if a ceiling is hit
 while(true)
 {
 	/// @DnDAction : YoYo Games.Collisions.If_Collision_Point
@@ -311,11 +311,16 @@ while(true)
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 41D48A48
+		/// @DnDInput : 3
 		/// @DnDParent : 77C409BA
 		/// @DnDArgument : "expr" "1"
 		/// @DnDArgument : "expr_relative" "1"
 		/// @DnDArgument : "var" "y"
+		/// @DnDArgument : "var_1" "move_y"
+		/// @DnDArgument : "var_2" "move_jumpTimer"
 		y += 1;
+		move_y = 0;
+		move_jumpTimer = 0;
 	}
 
 	/// @DnDAction : YoYo Games.Collisions.If_Object_At

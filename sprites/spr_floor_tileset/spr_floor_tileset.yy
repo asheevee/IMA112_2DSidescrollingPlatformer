@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_floor_tileset",
   "bboxMode":0,
-  "bbox_bottom":191,
+  "bbox_bottom":255,
   "bbox_left":0,
   "bbox_right":191,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":192,
+  "height":256,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"4c08d8f5-2983-4fa2-95f4-d32ec68ee8cd","blendMode":0,"displayName":"default","isLocked":false,"name":"4c08d8f5-2983-4fa2-95f4-d32ec68ee8cd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
