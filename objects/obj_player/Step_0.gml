@@ -266,8 +266,8 @@ if ((l65C1AEEC_0 > 0))
 	/// @DnDHash : 2C69024F
 	/// @DnDComment : set the jump bool and jump timer$(13_10)used for more fluid jumping (handled elsewhere)
 	/// @DnDParent : 65C1AEEC
-	/// @DnDArgument : "expr" "move_bufferedJump"
-	if(move_bufferedJump)
+	/// @DnDArgument : "expr" "move_bufferedJump && (control_input_jumpHold || control_input_jumpInit)"
+	if(move_bufferedJump && (control_input_jumpHold || control_input_jumpInit))
 	{
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
@@ -291,15 +291,42 @@ else
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 277B626B
-	/// @DnDInput : 2
 	/// @DnDParent : 3A250E90
 	/// @DnDArgument : "expr" "false"
-	/// @DnDArgument : "expr_1" "1"
-	/// @DnDArgument : "expr_relative_1" "1"
 	/// @DnDArgument : "var" "move_isGrounded"
-	/// @DnDArgument : "var_1" "move_coyoteTime"
 	move_isGrounded = false;
-	move_coyoteTime += 1;
+
+	/// @DnDAction : YoYo Games.Common.If_Expression
+	/// @DnDVersion : 1
+	/// @DnDHash : 5E4688A0
+	/// @DnDParent : 3A250E90
+	/// @DnDArgument : "expr" "move_isJumping"
+	if(move_isJumping)
+	{
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 283679B0
+		/// @DnDParent : 5E4688A0
+		/// @DnDArgument : "expr" "100"
+		/// @DnDArgument : "var" "move_coyoteTime"
+		move_coyoteTime = 100;
+	}
+
+	/// @DnDAction : YoYo Games.Common.Else
+	/// @DnDVersion : 1
+	/// @DnDHash : 68FD0524
+	/// @DnDParent : 3A250E90
+	else
+	{
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 7B1C72DF
+		/// @DnDParent : 68FD0524
+		/// @DnDArgument : "expr" "1"
+		/// @DnDArgument : "expr_relative" "1"
+		/// @DnDArgument : "var" "move_coyoteTime"
+		move_coyoteTime += 1;
+	}
 
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
