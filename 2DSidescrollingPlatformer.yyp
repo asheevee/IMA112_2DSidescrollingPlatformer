@@ -35,7 +35,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"2DSidescrollingPlatformer",
   "resources":[
@@ -52,6 +52,7 @@
     {"id":{"name":"obj_orb_jump","path":"objects/obj_orb_jump/obj_orb_jump.yy",},},
     {"id":{"name":"obj_orb_parent","path":"objects/obj_orb_parent/obj_orb_parent.yy",},},
     {"id":{"name":"obj_orb_speed","path":"objects/obj_orb_speed/obj_orb_speed.yy",},},
+    {"id":{"name":"obj_player_camera","path":"objects/obj_player_camera/obj_player_camera.yy",},},
     {"id":{"name":"obj_player_segment_jump","path":"objects/obj_player_segment_jump/obj_player_segment_jump.yy",},},
     {"id":{"name":"obj_player_segment_speed","path":"objects/obj_player_segment_speed/obj_player_segment_speed.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
