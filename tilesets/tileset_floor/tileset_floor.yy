@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"tileset_floor",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -26,10 +26,6 @@
     "name":"Default",
     "path":"texturegroups/Default",
   },
-  "tileAnimation":{
-    "FrameData":[0,1,2,3,4,5,6,7,8,],
-    "SerialiseFrameCount":1,
-  },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,
   "tileHeight":64,
@@ -38,5 +34,5 @@
   "tileWidth":64,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":9,
+  "tile_count":12,
 }

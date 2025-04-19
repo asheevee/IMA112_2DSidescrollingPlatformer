@@ -16,8 +16,9 @@ coins += 1;
 /// @DnDVersion : 1.1
 /// @DnDHash : 594C88EE
 /// @DnDArgument : "soundid" "sfx_coin"
+/// @DnDArgument : "gain" "0.1"
 /// @DnDSaveInfo : "soundid" "sfx_coin"
-audio_play_sound(sfx_coin, 0, 0, 1.0, undefined, 1.0);
+audio_play_sound(sfx_coin, 0, 0, 0.1, undefined, 1.0);
 
 /// @DnDAction : YoYo Games.Particles.Effect
 /// @DnDVersion : 1
